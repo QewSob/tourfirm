@@ -10,6 +10,10 @@ const PORT = 3000; // Используем порт 3000
 app.use(cors());
 app.use(bodyParser.json());
 
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "travel", "index.html"));
+});
+
 const transporter = nodemailer.createTransport({
     host: "smtp.mail.ru",
     port: 465,
