@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тур в Стамбул</title>
+    <link rel="stylesheet" href="istanbul.css">
+</head>
+<body>
+    <header>
+        Тур в Стамбул
+    </header>
+
+    <div class="container">
+        <section class="tour-info">
+            <div class="tour-images">
+                <img src="images/istanbul1.jpg" alt="Стамбул">
+                <img src="images/istanbul2.jpg" alt="Стамбул">
+                <img src="images/istanbul3.jpg" alt="Стамбул">
+            </div>
+            <div class="tour-text">
+                <h2>Описание тура</h2>
+                <p>Стамбул ранее являлся столицей Турции. Один из самых крупнейших городов по численности населения во всей Европе: занимает третью строчку после Москвы и Лондона. Он одновременно расположен на двух материках: в Азии и Европе. Делится город проливом Босфор, он, кстати, единственный соединяет Чёрное и Средиземное <моря class=""></моря></p>
+            </div>
+        </section>
+
+       <section class="booking">
+            <h2>Оставить заявку</h2>
+            <form id="contactForm" onsubmit="event.preventDefault(); showNotification();">
+                <div class="form-group">
+                    <label for="name">🌟 Ваше имя</label>
+                    <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
+                </div>
+                <div class="form-group">
+                <label for="phone">📞 Ваш телефон</label>
+                <input type="tel" id="phone" name="phone" placeholder="Введите номер телефона" maxlength="13" required>
+                </div>
+
+                <button type="submit" class="btn">🚀 Отправить заявку</button>
+            </form>
+
+            <!-- Всплывающее уведомление -->
+            <div id="notification" class="notification">
+                ✅ Ваша заявка принята! Мы скоро вам ответим.
+            </div>
+        </section>
+    </div>
+
+    <script src="/js/form-handler.js"></script>
+    <script src="script.js"></script>
+
+    <style>
+        /* Стили для уведомления */
+        .notification {
+            display: none;
+            background: #4CAF50;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 15px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+    </style>
+
+    <script>
+        function showNotification() {
+            let notification = document.getElementById("notification");
+            notification.style.display = "block";
+
+            // Добавляем анимацию появления
+            setTimeout(() => {
+                notification.style.opacity = "1";
+            }, 50);
+
+            // Убираем уведомление через 5 секунд
+            setTimeout(() => {
+                notification.style.opacity = "0";
+                setTimeout(() => {
+                    notification.style.display = "none";
+                }, 500);
+            }, 5000);
+        }
+    </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let phoneInput = document.getElementById("phone");
+
+        // Добавляем +998, если поле пустое
+        phoneInput.addEventListener("focus", function () {
+            if (!phoneInput.value.startsWith("+998")) {
+                phoneInput.value = "+998";
+            }
+        });
+
+        // Запрещаем удалять +998
+        phoneInput.addEventListener("input", function () {
+            if (!phoneInput.value.startsWith("+998")) {
+                phoneInput.value = "+998";
+            }
+        });
+
+        // Убираем возможность стереть +998
+        phoneInput.addEventListener("keydown", function (event) {
+            if (phoneInput.selectionStart < 4 && (event.key === "Backspace" || event.key === "Delete")) {
+                event.preventDefault();
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,414 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5   ;
+    color: #333;
+     padding-top: 80px; /* Подстроить под высоту header */
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.5); /* Затемненный фон */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 80px; /* Уменьшаем высоту хедера */
+}
+.logo-link {
+    display: flex;
+    align-items: center;
+    filter: brightness(1.8); /* Увеличивает яркость */
+}
+.logo svg {
+    fill: white; /* Сделает логотип белым */
+    opacity: 1;  /* Полностью видимый */
+}
+
+.logo {
+    width: 230px;
+    height: auto;
+    position: absolute;
+    top: 1%;
+    left: 49%;
+    transform: translateX(-50%);
+    z-index: 10;
+    filter: brightness(1.5);
+    pointer-events: none; /* Отключает реакцию на наведение */
+}
+
+
+
+
+.logo:hover {
+    transform: scale(1.1); /* Увеличивается при наведении */
+}
+
+
+
+nav {
+    flex-grow: 1; /* Растягиваем навигацию */
+    text-align: right; /* Выравниваем текст */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px; /* Размер текста как было */
+    margin-left: 20px; /* Отступ между ссылками */
+}
+
+
+
+
+nav .nav-list {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+nav .nav-list li {
+    margin: 0 20px;
+}
+
+nav .nav-list a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav .nav-list a:hover {
+    color: #ff5722;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/backg.png') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+
+.hero-content {
+    max-width: 600px;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeIn 2s ease-out;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.cta-btn {
+    padding: 12px 30px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #e64a19;
+}
+
+/* Services Section */
+.services {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: white;
+}
+
+.services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.service-items {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.service-item {
+    background-color: #fff;
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.service-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.service-item h3 {
+    margin-top: 20px;
+    font-size: 1.6rem;
+    color: #333;
+}
+
+.service-item p {
+    font-size: 1.1rem;
+    color: #777;
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    font-size: 1rem;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .service-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-item {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .cta-btn {
+        font-size: 1rem;
+        padding: 10px 25px;
+    }
+}
+/* Hero Section */
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/backg.jpg') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Services Section */
+.service-items {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.service-item {
+    background-color: #fff;
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.service-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.service-item h3 {
+    margin-top: 20px;
+    font-size: 1.6rem;
+    color: #333;
+}
+
+.service-item p {
+    font-size: 1.1rem;
+    color: #777;
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    font-size: 1rem;
+}
+.contact-info {
+    position: absolute; /* Или fixed, если хочешь, чтобы блок оставался на месте при прокрутке */
+    top: 20px; /* Подними выше */
+    right: 30px; /* Сдвинь правее */
+    text-align: right;
+    color: white;
+    font-size: 16px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.contact-info .icon {
+    margin-left: 10px;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+.about-section {
+    background-image: url('images/about us.jpg'); /* Укажи путь к фото */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    min-height: 600px; /* Увеличил высоту */
+    display: flex;
+    padding: 50px;
+}
+
+/* Затемняющий слой */
+.about-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Затемнение */
+}
+
+.about-content {
+    position: relative;
+    z-index 1;
+    padding: 100px;
+    border-radius: 10px;
+    max-width: 70%; /* Чтобы текст не растягивался */
+}
+
+.about-content h2 {
+    font-size: 36px; /* Увеличенный размер заголовка */
+    margin-bottom: 15px;
+}
+
+.about-content p {
+    font-size: 20px; /* Увеличенный размер текста */
+    line-height: 1.6;
+}
+.lang-btn {
+    background: none;
+    color: white;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.lang-btn img {
+    width: 20px;
+    height: auto;
+}
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    text-align: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+/* Показываем окно */
+.popup.show {
+    opacity: 1;
+    visibility: visible;
+}
+Полученные данные: { name: 'Иван', phone: '+998901234567' }
+Отправляем письмо: Имя: Иван, Телефон: +998901234567
+✅ Письмо успешно отправлено!
+
+
+
+
+
+
+
+
+

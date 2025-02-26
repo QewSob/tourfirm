@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NA NEBE TRIP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+    <nav>
+        <ul class="nav-list">
+            <li><a href="#contact"data-lang="home">Главная</a></li>
+            <li><a href="#services"data-lang="tours">Туры</a></li> <!-- Ссылка на секцию "Услуги" -->
+            <li><a href="#contact"data-lang="contacts">Контакты</a></li>
+            <li><a href="#about" data-lang="aboutUs" class="scroll-link">О нас</a></li>
+
+        </ul>
+    </nav>
+    <div class="language-switcher">
+                <button class="lang-btn" onclick="changeLanguage('ru')">
+                    <img src="images/ru.jpg" alt="Русский"> Рус
+                </button>
+                <button class="lang-btn" onclick="changeLanguage('en')">
+                    <img src="images/en.jpg" alt="English"> Eng
+                </button>
+                <button class="lang-btn" onclick="changeLanguage('uz')">
+                    <img src="images/uz.jpg" alt="Oʻzbek"> Uz
+                </button>
+            </div>
+
+</header>
+
+    <!-- Main Section (Hero Section) -->
+    <section class="hero" id="contact">
+        <div class="hero-content">
+            <img src="images/loggo.png" alt="Na Nebe Trip" class="logo">>
+            <h1 data-lang="heroTitle">Путешествуйте с нами</h1>
+            <p data-lang="heroDescription">Откройте для себя новые горизонты с лучшими предложениями на рынке!</p>
+        </div>
+        <div class="contact-info">
+            <p>📞 +998 (99) 474-44-84</p>
+            <p>📞 +998 (98) 310-44-84</p>
+            <p>📞 +998 (97) 454-44-84</p>
+            <p>📍 Ташкент, Юнусабад 19-й квартал 31-134</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+    <h2 data-lang="toptours">Популярные Туры</h2>
+    <div class="service-items">
+    <div class="service-item">
+            <a href="dubai.html">
+            <img src="images/service.jpg" alt="Дубай">
+            <h3 data-lang="dubai">Дубай</h3>
+                </a>
+    </div>
+    <div class="service-item">
+        <a href="sharm.html">
+        <img src="images/service2.jpg" alt="Шарм эль Шейх">
+        <h3 data-lang="sharm">Шарм-эль-Шейх</h3>
+            </a>
+    </div>
+    <div class="service-item">
+         <a href="antalya.html">
+        <img src="images/service3.jpg" alt="Анталия">
+            <h3 data-lang="antalya">Анталия</h3>
+        </a>
+    </div>
+    <div class="service-item">
+        <a href="thailand.html">
+        <img src="images/service4.jpg" alt="Таиланд">
+        <h3 data-lang="thailand">Таиланд</h3>
+            </a>
+    </div>
+    <div class="service-item">
+        <a href="bali.html">
+        <img src="images/service5.jpg" alt="Бали">
+        <h3 data-lang="bali">Бали</h3>
+            </a>
+    </div>
+    <div class="service-item">
+        <a href="istanbul.html">
+        <img src="images/service6.jpg" alt="Стамбул">
+        <h3 data-lang="istanbul">Стамбул</h3>
+            </a>
+    </div>
+    <div class="service-item">
+        <a href="georgia.html">
+        <img src="images/service7.jpg" alt="Грузия">
+        <h3 data-lang="georgia">Грузия</h3>
+            </a>
+    </div>
+    <div class="service-item">
+        <a href="vietnam.html">
+        <img src="images/service8.jpg" alt="Вьетнам">
+        <h3 data-lang="vietnam">Вьетнам</h3>
+            </a>
+    </div>
+    <div class="service-item">
+        <a href="azerbajan.html">
+        <img src="images/azerbajan.jpg" alt="Азербайджан">
+        <h3 data-lang="azerbajan">Азербайджан</h3>
+            </a>
+    </div>
+    <div class="service-item">
+        <a href="maldive.html">
+        <img src="images/maldive.jpg" alt="Мальдивы">
+        <h3 data-lang="maldive">Мальдивы</h3>
+            </a>
+    </div>
+
+</div>
+</section>
+
+<section class="about-section" id="about">
+    <div class="about-content">
+        <h2 data-lang="aboutUs">О нас</h2>
+        <p data-lang="aboutDescription">Na Nebe Trip — ведущее туристическое агентство, специализирующееся на создании уникальных и незабываемых путешествий по всему миру. Мы предоставляем широкий спектр услуг, включая индивидуальные туры, групповые поездки, пакетные предложения, круизы и многое другое.</p>
+    </div>
+</section>
+
+
+    <script src="scripts.js"></script>
+
+<form id="contactForm">
+    <input type="text" name="name" placeholder="Ваше имя" required>
+    <input type="email" name="email" placeholder="Ваш email" required>
+    <textarea name="message" placeholder="Ваше сообщение" required></textarea>
+    <button type="submit">Отправить</button>
+</form>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    let formData = new FormData(this);
+    let response = await fetch("/send-mail", {
+        method: "POST",
+        body: formData
+    });
+
+    let result = await response.json();
+    alert(result.message);
+});
+</script>
+
+
+<script>
+    function smoothScroll(targetId) {
+        const target = document.getElementById(targetId);
+        if (!target) return;
+
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY;
+        const startPosition = window.scrollY;
+        const distance = targetPosition - startPosition;
+        const duration = 600; // Длительность прокрутки в миллисекундах
+        let startTime = null;
+
+        function animationScroll(currentTime) {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const run = ease(timeElapsed, startPosition, distance, duration);
+            window.scrollTo(0, run);
+            if (timeElapsed < duration) requestAnimationFrame(animationScroll);
+        }
+
+        function ease(t, b, c, d) { // Функция плавности (ease-out)
+            t /= d;
+            t--;
+            return c * (t * t * t + 1) + b;
+        }
+
+        requestAnimationFrame(animationScroll);
+    }
+
+    // Добавляем обработчики для кнопок
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(event) {
+            event.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            smoothScroll(targetId);
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>

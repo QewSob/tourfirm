@@ -1,0 +1,90 @@
+body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background: url('images/dubai.jpg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 75px 20px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .tour-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .tour-images {
+            display: flex;
+            gap: 10px;
+        }
+        .tour-images img {
+            width: 32%;
+            border-radius: 10px;
+        }
+        .tour-text {
+            text-align: center;
+        }
+        .booking {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #ff6b00;
+            font-size: 16px;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ff6b00;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+        }
+        input:focus {
+            border-color: #e65c00;
+            box-shadow: 0 0 8px rgba(230, 92, 0, 0.5);
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #ff6b00;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            margin-top: 10px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #e65c00;
+            transform: scale(1.05);
+        }

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тур в Азербайджан</title>
+    <link rel="stylesheet" href="azerbajan.css">
+</head>
+<body>
+    <header>
+        Тур в Азербайджан
+    </header>
+
+    <div class="container">
+        <section class="tour-info">
+            <div class="tour-images">
+                <img src="images/azerbajan1.jpg" alt="Азербайджан">
+                <img src="images/azerbajan2.jpg" alt="Азербайджан">
+                <img src="images/azerbajan3.jpg" alt="Азербайджан">
+            </div>
+            <div class="tour-text">
+                <h2>Описание тура</h2>
+                <p>Что хорошего в Азербайджане?
+Azerbaijan facts | National Geographic Kids
+Азербайджан – земля огней !
+
+Одной из самых известных достопримечательностей Азербайджана является Янар-Даг (или «Горящая гора»), естественный светящийся огонь, горящий на склоне холма вдоль Каспийского моря. Верная своему названию, гора пылает уже по меньшей мере 65 лет!</p>
+            </div>
+        </section>
+
+        <section class="booking">
+            <h2>Оставить заявку</h2>
+            <form id="contactForm" onsubmit="event.preventDefault(); showNotification();">
+                <div class="form-group">
+                    <label for="name">🌟 Ваше имя</label>
+                    <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
+                </div>
+                <div class="form-group">
+                <label for="phone">📞 Ваш телефон</label>
+                <input type="tel" id="phone" name="phone" placeholder="Введите номер телефона" maxlength="13" required>
+                </div>
+
+                <button type="submit" class="btn">🚀 Отправить заявку</button>
+            </form>
+
+            <!-- Всплывающее уведомление -->
+            <div id="notification" class="notification">
+                ✅ Ваша заявка принята! Мы скоро вам ответим.
+            </div>
+        </section>
+    </div>
+
+    <script src="/js/form-handler.js"></script>
+    <script src="script.js"></script>
+
+    <style>
+        /* Стили для уведомления */
+        .notification {
+            display: none;
+            background: #4CAF50;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 15px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+    </style>
+
+    <script>
+        function showNotification() {
+            let notification = document.getElementById("notification");
+            notification.style.display = "block";
+
+            // Добавляем анимацию появления
+            setTimeout(() => {
+                notification.style.opacity = "1";
+            }, 50);
+
+            // Убираем уведомление через 5 секунд
+            setTimeout(() => {
+                notification.style.opacity = "0";
+                setTimeout(() => {
+                    notification.style.display = "none";
+                }, 500);
+            }, 5000);
+        }
+    </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let phoneInput = document.getElementById("phone");
+
+        // Добавляем +998, если поле пустое
+        phoneInput.addEventListener("focus", function () {
+            if (!phoneInput.value.startsWith("+998")) {
+                phoneInput.value = "+998";
+            }
+        });
+
+        // Запрещаем удалять +998
+        phoneInput.addEventListener("input", function () {
+            if (!phoneInput.value.startsWith("+998")) {
+                phoneInput.value = "+998";
+            }
+        });
+
+        // Убираем возможность стереть +998
+        phoneInput.addEventListener("keydown", function (event) {
+            if (phoneInput.selectionStart < 4 && (event.key === "Backspace" || event.key === "Delete")) {
+                event.preventDefault();
+            }
+        });
+    });
+</script>
+</body>
+</html>
