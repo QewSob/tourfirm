@@ -96,14 +96,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/QewSob/tourfirm.git"
+    "url": "git+https://github.com/QewSob/mybackend.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/QewSob/tourfirm/issues"
+    "url": "https://github.com/QewSob/mybackend/issues"
   },
-  "homepage": "https://github.com/QewSob/tourfirm#readme",
+  "homepage": "https://github.com/QewSob/mybackend#readme",
   "description": ""
 }

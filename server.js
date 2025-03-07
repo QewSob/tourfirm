@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const path = require("path");
 
 const app = express();
-const PORT = process.env.PORT || 3000; // <-- Оставляем только это объявление
+const PORT = process.env.PORT || 8080; // <-- Оставляем только это объявление
 
 app.use(cors());
 app.use(bodyParser.json());
