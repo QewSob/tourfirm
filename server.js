@@ -3,16 +3,14 @@ const express = require("express");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const path = require("path");
 
 const app = express();
-const PORT = 3000; // Используем порт 3000
+const PORT = process.env.PORT || 3000; // <-- Оставляем только это объявление
 
 app.use(cors());
 app.use(bodyParser.json());
-
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "travel", "index.html"));
-});
+app.use(express.static(path.join(__dirname, "public")));
 
 const transporter = nodemailer.createTransport({
     host: "smtp.mail.ru",
@@ -50,6 +48,4 @@ app.post("/send-mail", async (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`🚀 Сервер запущен на http://localhost:${PORT}`);
-});
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

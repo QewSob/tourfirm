@@ -34,18 +34,21 @@
 
     <!-- Main Section (Hero Section) -->
     <section class="hero" id="contact">
-        <div class="hero-content">
-            <img src="images/loggo.png" alt="Na Nebe Trip" class="logo">>
-            <h1 data-lang="heroTitle">Путешествуйте с нами</h1>
-            <p data-lang="heroDescription">Откройте для себя новые горизонты с лучшими предложениями на рынке!</p>
-        </div>
+    <div class="hero-content">
+        <img src="images/loggo.png" alt="Na Nebe Trip" class="logo">
         <div class="contact-info">
-            <p>📞 +998 (99) 474-44-84</p>
-            <p>📞 +998 (98) 310-44-84</p>
-            <p>📞 +998 (97) 454-44-84</p>
-            <p>📍 Ташкент, Юнусабад 19-й квартал 31-134</p>
+            <p style="font-size: 15px;" class="phone">+998 (99) 474-44-84</p>
+            <p style="font-size: 15px;" class="phone">+998 (98) 310-44-84</p>
+            <p style="font-size: 15px;" class="phone">+998 (97) 454-44-84</p>
+            <p style="font-size: 15px;" class="phone"> 📍 Ташкент, Юнусабад 19-й квартал 31-134</p>
         </div>
-    </section>
+        <h1 class="hero-title" data-lang="heroTitle">Путешествуйте с нами</h1>
+        <p class="hero-subtitle" data-lang="heroDescription">
+            Откройте для себя новые горизонты с лучшими предложениями на рынке!
+        </p>
+    </div>
+</section>
+
 
     <!-- Services Section -->
     <section class="services" id="services">
@@ -124,29 +127,7 @@
 
 
     <script src="scripts.js"></script>
-
-<form id="contactForm">
-    <input type="text" name="name" placeholder="Ваше имя" required>
-    <input type="email" name="email" placeholder="Ваш email" required>
-    <textarea name="message" placeholder="Ваше сообщение" required></textarea>
-    <button type="submit">Отправить</button>
-</form>
-
-<script>
-document.getElementById("contactForm").addEventListener("submit", async function(event) {
-    event.preventDefault();
-
-    let formData = new FormData(this);
-    let response = await fetch("/send-mail", {
-        method: "POST",
-        body: formData
-    });
-
-    let result = await response.json();
-    alert(result.message);
-});
-</script>
-
+    
 
 <script>
     function smoothScroll(targetId) {

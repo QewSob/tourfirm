@@ -37,7 +37,7 @@ header {
 }
 
 .logo {
-    width: 230px;
+    width: 180px;
     height: auto;
     position: absolute;
     top: 1%;
@@ -214,27 +214,6 @@ footer {
     }
 }
 
-/* Адаптивность */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 3rem;
-    }
-
-    .service-items {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .service-item {
-        width: 80%;
-        margin-bottom: 20px;
-    }
-
-    .cta-btn {
-        font-size: 1rem;
-        padding: 10px 25px;
-    }
-}
 /* Hero Section */
 /* Hero Section */
 .hero {
@@ -301,17 +280,18 @@ footer {
     color: white;
     font-size: 1rem;
 }
-.contact-info {
+.hero .contact-info {
     position: absolute; /* Или fixed, если хочешь, чтобы блок оставался на месте при прокрутке */
     top: 20px; /* Подними выше */
     right: 30px; /* Сдвинь правее */
     text-align: right;
     color: white;
-    font-size: 16px;
+    display: inline-block;
+    font-size: 0.5rem;
 }
 
 .contact-info p {
-    margin: 5px 0;
+    margin: 1px 0;
 }
 
 .contact-info .icon {
@@ -400,9 +380,55 @@ body {
     opacity: 1;
     visibility: visible;
 }
-Полученные данные: { name: 'Иван', phone: '+998901234567' }
-Отправляем письмо: Имя: Иван, Телефон: +998901234567
-✅ Письмо успешно отправлено!
+@media (max-width: 768px) {
+  .hero-section {
+    position: relative;
+    text-align: center;
+    padding-top: 80px; /* Чуть меньше отступ сверху */
+  }
+
+  .hero .logo {
+    width: 30%;
+    height: auto;
+    margin-bottom: 10px;
+    position: relative;
+    top: -155px; /* Сдвинет логотип вниз */
+    left: 65px;
+  }
+
+  .hero-title {
+    font-size: 25px !important;
+    font-weight: bold !important;
+    line-height: 1.1 !important;
+    margin-bottom: 8px !important;
+    padding: 0 10px !important;
+  }
+
+  .hero-subtitle {
+    font-size: 18px !important;
+    line-height: 1.1 !important;
+    padding: 0 10px !important;
+  }
+  .about-content p {
+    font-size: 10px; /* Увеличенный размер текста */
+    line-height: 1.6;
+}
+nav .nav-list a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.7rem;
+    transition: color 0.3s ease;
+}
+nav .nav-list li {
+    margin: 0 2px;
+}
+
+  .menu {
+    display: block; /* Например, если меню должно быть бургером */
+  }
+}
+
 
 
 
